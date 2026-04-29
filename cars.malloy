@@ -1,0 +1,120 @@
+source: cars is duckdb.table('cars.csv') extend {
+
+  // -- Dimensions --
+
+  dimension: decade is floor(model_year / 10) * 10
+
+  dimension: era is
+    pick '2000s' when model_year < 2010
+    pick '2010s' when model_year < 2020
+    else '2020s'
+
+  dimension: price_tier is
+    pick 'Budget under 25k'  when msrp_usd < 25000
+    pick 'Mid-Range 25-45k'  when msrp_usd < 45000
+    pick 'Premium 45-70k'    when msrp_usd < 70000
+    else 'Luxury 70k+'
+
+  dimension: hp_class is
+    pick 'Economy under 150hp'   when horsepower < 150
+    pick 'Mainstream 150-250hp'  when horsepower < 250
+    pick 'Performance 250-400hp' when horsepower < 400
+    else 'Supercar 400hp+'
+
+  dimension: mpg_combined is (city_mpg + highway_mpg) / 2
+
+  // -- Measures --
+
+  measure: total_vehicles  is count()
+  measure: avg_price       is avg(msrp_usd)
+  measure: avg_horsepower  is avg(horsepower)
+  measure: avg_city_mpg    is avg(city_mpg)
+  measure: avg_hwy_mpg     is avg(highway_mpg)
+  measure: avg_weight      is avg(curb_weight_lbs)
+  measure: avg_reliability is avg(reliability_score)
+  measure: avg_safety      is avg(safety_rating)
+  measure: ev_count        is count() { where: fuel_type = 'Electric' }
+  measure: hybrid_count    is count() { where: fuel_type = 'Hybrid' }
+  measure: gasoline_count  is count() { where: fuel_type = 'Gasoline' }
+
+  // -- Views --
+
+  view: by_make is {
+    group_by: make
+    aggregate:
+      total_vehicles
+      avg_price
+      avg_horsepower
+      avg_city_mpg
+      avg_reliability
+    order_by: total_vehicles desc
+  }
+
+  view: by_segment is {
+    group_by: segment
+    aggregate:
+      total_vehicles
+      avg_price
+      avg_horsepower
+      avg_city_mpg
+      avg_weight
+      avg_safety
+    order_by: avg_price desc
+  }
+
+  view: by_fuel_type is {
+    group_by: fuel_type
+    aggregate:
+      total_vehicles
+      avg_price
+      avg_horsepower
+      avg_city_mpg
+      avg_hwy_mpg
+      avg_weight
+    order_by: total_vehicles desc
+  }
+
+  view: by_body_style is {
+    group_by: body_style
+    aggregate:
+      total_vehicles
+      avg_price
+      avg_horsepower
+      avg_city_mpg
+      avg_weight
+    order_by: total_vehicles desc
+  }
+
+  view: by_country is {
+    group_by: country_of_origin
+    aggregate:
+      total_vehicles
+      avg_price
+      avg_reliability
+      avg_safety
+      avg_horsepower
+    order_by: avg_reliability desc
+  }
+
+  view: by_year is {
+    group_by: model_year
+    aggregate:
+      total_vehicles
+      avg_price
+      avg_horsepower
+      avg_city_mpg
+      ev_count
+      hybrid_count
+    order_by: model_year asc
+  }
+
+  view: by_era is {
+    group_by: era
+    aggregate:
+      total_vehicles
+      avg_price
+      avg_horsepower
+      avg_city_mpg
+    order_by: era asc
+  }
+}

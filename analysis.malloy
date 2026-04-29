@@ -1,0 +1,134 @@
+import "cars.malloy"
+
+// Q1: Which brands give the most horsepower per dollar?
+query: hp_per_dollar is cars -> {
+  group_by: make
+  aggregate:
+    total_vehicles
+    avg_price
+    avg_horsepower
+    hp_per_thousand is avg(horsepower) / avg(msrp_usd) * 1000
+  order_by: hp_per_thousand desc
+  limit: 15
+}
+
+// Q2: How has fuel efficiency changed by decade?
+query: mpg_by_decade is cars -> {
+  where: fuel_type = 'Gasoline'
+  group_by: decade
+  aggregate:
+    total_vehicles
+    avg_city_mpg
+    avg_hwy_mpg
+  order_by: decade asc
+}
+
+// Q3: EV and hybrid counts per year
+query: ev_hybrid_by_year is cars -> {
+  group_by: model_year
+  aggregate:
+    total_vehicles
+    ev_count
+    hybrid_count
+    gasoline_count
+  order_by: model_year asc
+}
+
+// Q4: Average price per segment per era
+query: price_by_segment_era is cars -> {
+  group_by: segment, era
+  aggregate:
+    total_vehicles
+    avg_price
+  order_by: segment asc, era asc
+}
+
+// Q5: Reliability and safety by country of origin
+query: reliability_by_country is cars -> {
+  group_by: country_of_origin
+  aggregate:
+    total_vehicles
+    avg_reliability
+    avg_safety
+    avg_price
+  order_by: avg_reliability desc
+}
+
+// Q6: Horsepower growth by era across brands
+query: hp_by_brand_era is cars -> {
+  group_by: make, era
+  aggregate:
+    total_vehicles
+    avg_horsepower
+    avg_price
+  order_by: era asc, avg_horsepower desc
+}
+
+// Q7: Body style breakdown per year
+query: body_style_by_year is cars -> {
+  group_by: model_year, body_style
+  aggregate: total_vehicles
+  order_by: model_year asc, total_vehicles desc
+}
+
+// Q8: Weight vs fuel economy by body style
+query: weight_vs_mpg is cars -> {
+  where: fuel_type = 'Gasoline'
+  group_by: body_style
+  aggregate:
+    avg_weight
+    avg_city_mpg
+    avg_hwy_mpg
+    avg_horsepower
+    total_vehicles
+  order_by: avg_weight desc
+}
+
+// Q9: Luxury brands ranked by reliability and safety
+query: luxury_value is cars -> {
+  where: segment ~ r'Luxury'
+  group_by: make
+  aggregate:
+    total_vehicles
+    avg_price
+    avg_horsepower
+    avg_reliability
+    avg_safety
+  order_by: avg_reliability desc
+}
+
+// Q10: Truck evolution over time
+query: truck_stats_by_era is cars -> {
+  where: body_style = 'Truck'
+  group_by: make, era
+  aggregate:
+    total_vehicles
+    avg_price
+    avg_horsepower
+    avg_city_mpg
+    avg_weight
+  order_by: make asc, era asc
+}
+
+// Q11: Price tier distribution by make
+query: price_tiers_by_make is cars -> {
+  group_by: make, price_tier
+  aggregate: total_vehicles
+  order_by: make asc, total_vehicles desc
+}
+
+// Q12: USA vs Japan vs Germany
+query: usa_vs_japan_vs_germany is cars -> {
+  where:
+    country_of_origin = 'USA'
+    or country_of_origin = 'Japan'
+    or country_of_origin = 'Germany'
+  group_by: country_of_origin, era
+  aggregate:
+    total_vehicles
+    avg_price
+    avg_horsepower
+    avg_reliability
+    avg_city_mpg
+  order_by: country_of_origin asc, era asc
+}
