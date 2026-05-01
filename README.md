@@ -18,7 +18,7 @@ My first hunch was that cars have gotten much more powerful over 25 years. The d
 
 ![HP by Decade](screenshots/01_hp_by_decade.png)
 
-Average horsepower in gasoline cars climbed roughly **30% between the 2000s and 2020s**, driven by turbocharging and direct injection becoming standard even in economy cars. But **horsepower per dollar also went up** — meaning we're getting more performance per dollar even as prices rose. The market got faster *and* cheaper on a pure power-per-dollar basis.
+Average horsepower in gasoline cars climbed roughly **3% between the 2000s and 2020s**, driven by turbocharging and direct injection becoming standard even in economy cars. Not a huge increase but something to be attentive of.
 
 When I ranked brands by HP per $1,000 of MSRP, American brands dominated completely:
 
@@ -38,7 +38,7 @@ I expected to see a clean electric vehicle surge starting around 2016. What I fo
 
 **Phase 2 — The Electric Push (2016–2024):** Pure EVs only become a real market force after 2016, accelerating sharply from 2020 onward, driven almost entirely by Tesla and American brands.
 
-The key insight: **hybrids and EVs aren't competing with each other** — they served different eras and different buyers. Brands that skipped hybrids and went straight to EVs may have missed a decade of consumer education.
+The key insight: **hybrids and EVs aren't competing with each other** they served different eras and different buyers. 
 
 ---
 
@@ -48,7 +48,7 @@ Everyone *feels* like the road is full of SUVs now. The data proves it:
 
 ![SUV Takeover](screenshots/04_suv_takeover.png)
 
-SUV share grows consistently from the early 2000s all the way through 2024. Sedan share contracts in direct proportion. Trucks hold steady — the pickup truck was already dominant and never left. By the early 2020s, SUVs are the single largest body-style category in new vehicle offerings. This shift has a hidden fuel economy cost: full-size SUVs average nearly 5,500 lbs and get roughly 35% worse city MPG than the compact sedans they replaced in American driveways.
+SUV share shows higher consistently from the early 2000s all the way through 2024. Sedan share contracts in direct proportion. Trucks hold steady — the pickup truck was already dominant and never left. By the early 2020s, SUVs are the single largest body-style category in new vehicle offerings. This shift has a hidden fuel economy cost: full-size SUVs average nearly 5,500 lbs and get roughly 35% worse city MPG than the compact sedans they replaced in American driveways.
 
 ---
 
@@ -76,7 +76,7 @@ When I built a composite luxury value ranking combining horsepower, reliability,
 
 ## What I Learned About Malloy
 
-Malloy made this feel like thinking out loud rather than writing SQL. Defining reusable `measure` and `dimension` fields in the source model meant I could explore iteratively without rewriting aggregations from scratch. The `pick` expression replaced ugly CASE WHEN chains with readable pattern matching. DuckDB as the backend made full-table scans across 12,000 rows instant. The one gotcha: **`year` is a reserved word in DuckDB** — I renamed the column to `model_year` in the CSV to avoid the conflict entirely rather than fighting backtick escaping throughout every file.
+Malloy made this feel like thinking out loud rather than writing SQL. Defining reusable `measure` and `dimension` fields in the source model meant I could explore iteratively without rewriting aggregations from scratch. The `pick` expression replaced ugly CASE WHEN chains with readable pattern matching. DuckDB as the backend made full-table scans across 12,000 rows instant. The one gotcha: **`year` is a reserved word in DuckDB** I renamed the column to `model_year` in the CSV to avoid the conflict entirely rather than fighting backtick escaping throughout every file.
 
 ---
 
