@@ -8,7 +8,7 @@
 
 ## The Question That Started Everything
 
-I've always wondered: **are we actually getting more car for our money than we used to?** Sticker prices have gone up dramatically since 2000 — but so has technology. Turbos, hybrids, driver assist, over-the-air updates. So I built a dataset of 12,000 vehicles spanning 20 major brands and 25 model years to find out. What I discovered surprised me on almost every question I asked.
+I've always wondered: **are we actually getting more car for our money than we used to?** Sticker prices have gone up dramatically since 2000, but so has technology. Turbos, hybrids, driver assist, over-the-air updates. So I built a dataset of 12,000 vehicles spanning 20 major brands and 25 model years to find out. What I discovered surprised me on almost every question I asked.
 
 ---
 
@@ -58,7 +58,7 @@ The sticker shock of car buying is real, but it hasn't been uniform across segme
 
 ![Price Heatmap](screenshots/05_price_heatmap.png)
 
-Full-size SUVs and luxury vehicles saw the steepest price increases across all three eras. Compact cars and mid-range sedans showed far more modest inflation. This is why mid-size sedans feel like a "deal" today — relative to everything around them, they haven't inflated nearly as much.
+Full-size SUVs and luxury vehicles saw the steepest price increases across all three eras. Compact cars and mid-range sedans showed far more modest inflation. This is why mid-size sedans feel like a "deal" today relative to everything around them, they haven't inflated nearly as much.
 
 ---
 
@@ -68,7 +68,7 @@ Breaking down reliability and safety scores by country of origin revealed someth
 
 ![Reliability by Origin](screenshots/06_reliability_by_origin.png)
 
-Japan leads on reliability across the dataset, driven by Toyota, Honda, and Lexus. South Korea (Hyundai and Kia) has dramatically improved and now rivals Japan on safety ratings — a remarkable 20-year quality transformation. American brands score high on raw performance but trail slightly on long-term reliability. Germany scores well on power but shows the most variance — the cost of engineering complexity.
+Japan leads on reliability across the dataset, driven by Toyota, Honda, and Lexus. South Korea (Hyundai and Kia) has dramatically improved and now rivals Japan on safety ratings a remarkable 20-year quality transformation. American brands score high on raw performance but trail slightly on long-term reliability. Germany scores well on power but shows the most variance — the cost of engineering complexity.
 
 When I built a composite luxury value ranking combining horsepower, reliability, safety, and price, **Lexus and Genesis consistently outscored German competitors**. The prestige badge of BMW or Mercedes comes at a real long-term cost.
 
@@ -103,7 +103,7 @@ Malloy made this feel like thinking out loud rather than writing SQL. Defining r
 
 **Urban planners and policymakers** tracking fleet fuel economy should note the SUV shift's real impact. The move from sedans to SUVs carries a significant aggregate MPG penalty that CAFE standards and EV incentives are still catching up to.
 
-**Data analysts evaluating Malloy** will find this repo a concrete example of how a well-designed source model dramatically reduces query-writing friction for exploratory analysis — and where the current rough edges are (reserved word conflicts, version-sensitive syntax).
+**Data analysts evaluating Malloy** will find this repo a concrete example of how a well-designed source model dramatically reduces query-writing friction for exploratory analysis and where the current rough edges are (reserved word conflicts, version-sensitive syntax).
 
 ---
 
