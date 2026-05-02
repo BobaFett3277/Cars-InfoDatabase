@@ -99,7 +99,7 @@ Malloy made this feel like thinking out loud rather than writing SQL. Defining r
 
 **Car buyers** can use these findings to recalibrate expectations: if you're cross-shopping luxury brands, Lexus and Genesis deliver more reliability per dollar than German badges. If you want raw performance on a budget, American muscle brands lead on HP-per-dollar and it's not particularly close.
 
-**Automotive industry analysts and OEMs** should pay close attention to the two-phase electrification story. The hybrid bridge was load-bearing infrastructure — it built consumer comfort with alternative powertrains before pure EVs were viable. Brands that skipped hybrids may find EV adoption slower because they skipped that trust-building decade.
+**Automotive industry analysts and OEMs** should pay close attention to the two-phase electrification story. The hybrid bridge was load-bearing infrastructure, it built consumer comfort with alternative powertrains before pure EVs were viable. Brands that skipped hybrids may find EV adoption slower because they skipped that trust-building decade.
 
 **Urban planners and policymakers** tracking fleet fuel economy should note the SUV shift's real impact. The move from sedans to SUVs carries a significant aggregate MPG penalty that CAFE standards and EV incentives are still catching up to.
 
@@ -107,4 +107,4 @@ Malloy made this feel like thinking out loud rather than writing SQL. Defining r
 
 ---
 
-*Built with [Malloy](https://malloydata.dev), [DuckDB](https://duckdb.org), and genuine curiosity about why cars cost so much now.*
+*Built with [Malloy](https://malloydata.dev), [DuckDB](https://duckdb.org)
