@@ -62,17 +62,6 @@ Full-size SUVs and luxury vehicles saw the steepest price increases across all t
 
 ---
 
-## Finding 5: Japan Leads on Reliability — But the Gap Is Closing
-
-Breaking down reliability and safety scores by country of origin revealed something interesting:
-
-![Reliability by Origin](screenshots/06_reliability_by_origin.png)
-
-Japan leads on reliability across the dataset, driven by Toyota, Honda, and Lexus. South Korea (Hyundai and Kia) has dramatically improved and now rivals Japan on safety ratings a remarkable 20-year quality transformation. American brands score high on raw performance but trail slightly on long-term reliability. Germany scores well on power but shows the most variance — the cost of engineering complexity.
-
-When I built a composite luxury value ranking combining horsepower, reliability, safety, and price, **Lexus and Genesis consistently outscored German competitors**. The prestige badge of BMW or Mercedes comes at a real long-term cost.
-
----
 
 ## What I Learned About Malloy
 
