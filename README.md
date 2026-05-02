@@ -34,11 +34,11 @@ I expected to see a clean electric vehicle surge starting around 2016. What I fo
 
 ![EV Adoption Wave](screenshots/03_ev_wave.png)
 
-**Phase 1 — The Hybrid Bridge (2005–2015):** Japan, led by Toyota, pioneered hybrids long before pure EVs were viable. Hybrid share climbs steadily through the 2010s and never retreats. This wasn't a failed experiment — it was infrastructure for consumer trust.
+**Phase 1 — The Hybrid Bridge (2005–2015):** Japan, led by Toyota, pioneered hybrids long before pure EVs were viable. Hybrid share climbs steadily through the 2010s and flutuates within that range
 
 **Phase 2 — The Electric Push (2016–2024):** Pure EVs only become a real market force after 2016, accelerating sharply from 2020 onward, driven almost entirely by Tesla and American brands.
 
-The key insight: **hybrids and EVs aren't competing with each other** they served different eras and different buyers. 
+The key insight: **hybrids and EVs aren't competing with each other** but are almost seen as being in a similar range compared to gas cars. 
 
 ---
 
